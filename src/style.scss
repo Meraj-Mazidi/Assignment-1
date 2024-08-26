@@ -1,0 +1,226 @@
+$font_color: #6982d3;
+$border_color: #6078c3;
+$border_shadow_color: #c6d6fd;
+$bg_color: #f7f8ff;
+
+@font-face {
+  font-family: 'roboto';
+  src: url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+}
+
+.roboto-regular {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.roboto-bold {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.container {
+  width: 100%;
+  height: 95vh;
+  display: flex;
+  justify-content: center;
+  position: relative;
+
+  .close_box_prompt {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+  }
+
+  .select_container {
+    margin-top: 20px;
+    width: 350px;
+    position: relative;
+    z-index: 20;
+
+    .select_input {
+      width: 90%;
+      height: 50px;
+      border-radius: 20px;
+      border: 3px solid $border_color;
+      font-size: 18px;
+      padding-left: 20px;
+      padding-right: 40px;
+      transition-property: all;
+      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+      transition-duration: 300ms;
+    }
+
+    .select_input:focus {
+      outline: 3.5px solid $border_shadow_color;
+      box-shadow: 0 0 10px $font_color;
+    }
+
+    .box_container {
+      width: 100%;
+      height: 250px;
+      border-radius: 20px;
+      border: 1px solid lightgray;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 65px;
+      overflow-y: scroll;
+      overflow-x: hidden;
+      padding-top: 20px;
+      padding-bottom: 20px;
+      padding-left: 15px;
+      padding-right: 15px;
+      box-shadow: 0 0 3px lightgray;
+      display: flex;
+      flex-direction: column;
+      gap: 0px;
+    }
+
+    .select_option_item {
+      padding-left: 10px;
+      padding-right: 10px;
+      border-radius: 10px;
+      font-size: 18px;
+      font-weight: 500;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .select_option_item:hover {
+      background-color: $bg_color;
+      color: $font_color;
+    }
+
+    .select_option_item_active {
+      background-color: $bg_color;
+      color: $font_color;
+    }
+
+    .option_text_icon p {
+      margin-top: 12px;
+      margin-bottom: 12px;
+    }
+
+    .option_text_icon {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .arrow_icon {
+      width: 22px;
+      height: 22px;
+    }
+
+    .arrow_icon_up {
+      rotate: 90deg;
+    }
+
+    .arrow_icon_down {
+      rotate: -90deg;
+    }
+
+    .input_arrow {
+      position: absolute;
+      top: 19px;
+      right: -18px;
+      cursor: pointer;
+    }
+
+    .error_text {
+      font-size: 18px;
+      color: red;
+      text-align: center;
+    }
+
+    .option_icon_img {
+      width: 25px;
+      height: 25px;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .option_icon {
+      font-size: 25px;
+    }
+
+    .icon_arrow {
+      color: rgb(150, 148, 148);
+    }
+  }
+
+  .desc_box {
+    width: 100%;
+    margin-top: 330px;
+    background-color: $bg_color;
+    padding: 16px;
+    border-radius: 20px;
+    box-shadow: 0 0 20px $border_shadow_color;
+    border: 1px solid $border_color;
+
+    h1 {
+      text-align: center;
+    }
+
+    h2 {
+      font-size: 18px;
+    }
+
+    ul {
+      font-size: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .desc_author {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      font-size: 18px;
+      font-weight: bold;
+
+      a {
+        color: $font_color;
+      }
+    }
+  }
+
+  // Responsive Media quries
+  @media (max-width: 640px) {
+    .select_container {
+      padding-left: 20px;
+      padding-right: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .select_input {
+      min-height: 50px;
+    }
+
+    .input_arrow {
+      right: 30px !important;
+    }
+
+    .box_container {
+      margin: auto;
+      width: calc(100% - 40px) !important;
+    }
+  }
+}
