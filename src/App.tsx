@@ -208,6 +208,21 @@ function App() {
             <li>Responsive</li>
           </ul>
 
+          <div className="desc_box_links">
+            <a
+              href="https://assignment-2-coral-beta.vercel.app/"
+              target="_blank"
+            >
+              Assignment 2 live view
+            </a>
+            <a
+              href="https://github.com/Meraj-Mazidi/Assignment-2"
+              target="_blank"
+            >
+              Assignment 2 GitHub
+            </a>
+          </div>
+
           <div className="desc_author">
             <h2>Author:</h2>
             <a href="https://meraj.vercel.app/" target="_blank">
